@@ -2,6 +2,8 @@
 
 A highly customizable and easy-to-use modal component for React applications. This plugin allows for custom styling and simple state management to handle the visibility of your modals.
 
+![react-modal](https://github.com/Lucadur/simple-react-modal/assets/104781650/418a6c88-529e-48d2-8ef3-53f1fa07a656)
+
 ## Features
 
 - **Customizable**: Override styles and classes for perfect integration into your design.
