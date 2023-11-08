@@ -15,10 +15,6 @@
   ],
   "author": "Lucas Durietz <lu.durietz@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Lucadur/simple-react-modal/issues"
-  },
-  "homepage": "https://github.com/Lucadur/simple-react-modal#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
