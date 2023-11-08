@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Lucas React Modal Plugin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A highly customizable and easy-to-use modal component for React applications. This plugin allows for custom styling and simple state management to handle the visibility of your modals.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Customizable**: Override styles and classes for perfect integration into your design.
+- **Simple API**: Easy to open and close with minimal code.
+- **Responsive**: Designed to be mobile-friendly out of the box.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To add this modal plugin to your project, run:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install lucas-react-modal-plugin
+```
 
-### `npm test`
+or with yarn:
+```
+yarn add lucas-react-modal-plugin
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+Here's how to use the Modal component in your application:
 
-### `npm run build`
+```
+import React, { useState } from 'react';
+import Modal from 'lucas-react-modal-plugin';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  // Custom styles for the modal
+  const customStyles = {
+    width: '80%',
+    maxWidth: '400px',
+    backgroundColor: 'lightblue',
+    // Add more custom styles if needed
+  };
 
-### `npm run eject`
+  return (
+    <div className="App">
+      <h1>Modal Example</h1>
+      <button onClick={toggleModal}>Toggle Modal</button>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={toggleModal}
+        style={customStyles}
+        className="custom-modal-class"
+      >
+        {/* Modal content goes here */}
+        <h2>Custom Styled Modal</h2>
+        <p>This modal can be styled according to your needs.</p>
+      </Modal>
+    </div>
+  );
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default App;
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Props
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- isOpen: Boolean indicating if the modal is visible.
+- onClose: Function to call when the modal should close.
+- style: Object with custom style rules.
+- className: String to add custom class(es) to the modal.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##  Customizing the Modal
+You can apply custom styles directly to the Modal via the style prop, or pass a custom class name through the className prop for CSS styling.
 
-## Learn More
+```
+<Modal
+  isOpen={isModalOpen}
+  onClose={toggleModal}
+  style={{ backgroundColor: 'lightblue', padding: '20px' }}
+  className="my-custom-modal"
+>
+  {/* Content */}
+</Modal>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+##  License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##  Contributing
+We welcome contributions to improve this modal plugin. Please feel free to fork the repository, make changes, and submit pull requests.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Created with ♥ by Lucas
